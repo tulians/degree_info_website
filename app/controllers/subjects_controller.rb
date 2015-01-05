@@ -10,6 +10,9 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @subject  = Subject.find(params[:id])
+    @comments = @subject.comments.all
+    @comment  = @subject.comments.build
   end
 
   # GET /subjects/new
