@@ -1,13 +1,9 @@
-<h1>Nueva Materia</h1>
+<h1>Nueva materia</h1>
 <div class="panel=body">
 	<%= form_for(@subject) do |f| %>
 		<blockquote>
 			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
-		</blockquote>
-		<blockquote>
 			<div class="form-group">Descripción</div><div><%= f.text_field :description %></div>
-		</blockquote>
-	    <blockquote>
 	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
 	    </blockquote>
 	    <div><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div>
