@@ -44,3 +44,5 @@ gem 'spring',        group: :development
 
 # Use devise for user management
 gem 'devise'
+
+gem 'hirb'
