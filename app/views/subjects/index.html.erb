@@ -1,5 +1,18 @@
-<h1>Listing subjects</h1>
+<h1>Listado de materias</h1>
 
+<% @subjects.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |subject| %>
+      <div class="col-md-4">
+        <%= image_tag subject.picture_url, width: '100%' if subject.picture.present?%>
+        <h4><%= link_to subject.name, subject %></h4>
+        <%= subject.description %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<!--
 <table>
   <thead>
     <tr>
@@ -27,3 +40,5 @@
 <br>
 
 <%= link_to 'New Subject', new_subject_path %>
+
+-->

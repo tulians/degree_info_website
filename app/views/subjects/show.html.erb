@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@subject.picture_url, width: '100%') if @subject.picture.present? %>
+  </div>
+
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @subject.name %></p>
+    <p><b>Description: </b><%= @subject.description %></p>
+    <p>
+      <%= link_to 'Edit', edit_subject_path(@subject) %> |
+      <%= link_to 'Destroy', @subject, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', subjects_path %>
+    </p>
+  </div>
+</div>
+
+<!--
 <p>
   <strong>Name:</strong>
   <%= @subject.name %>
@@ -27,3 +44,5 @@
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
+
+-->
