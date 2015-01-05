@@ -1,6 +1,18 @@
-<h1>Editing subject</h1>
+<h1>Editar materia</h1>
+<div class="panel=body">
+	<%= form_for(@subject) do |f| %>
+		<blockquote>
+			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
+		</blockquote>
+		<blockquote>
+			<div class="form-group">Descripción</div><div><%= f.text_field :description %></div>
+		</blockquote>
+	    <blockquote>
+	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
+	    </blockquote>
+	    <div><%= f.submit "Actualizar", class:"btn btn-primary btn-sm" %></div>
+	<%end%>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @subject %> |
-<%= link_to 'Back', subjects_path %>
+<!-- <%= render 'form' %> -->
+<%= link_to 'Show', @subject %> | <%= link_to 'Back', subjects_path %>

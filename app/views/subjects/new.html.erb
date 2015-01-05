@@ -1,5 +1,23 @@
-<h1>New subject</h1>
+<h1>Nueva Materia</h1>
+<div class="panel=body">
+	<%= form_for(@subject) do |f| %>
+		<blockquote>
+			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
+		</blockquote>
+		<blockquote>
+			<div class="form-group">Descripción</div><div><%= f.text_field :description %></div>
+		</blockquote>
+	    <blockquote>
+	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
+	    </blockquote>
+	    <div><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div>
+	<%end%>
+</div>
+<!--
+<div class = "panel-footer text-ellipsis">
+	<span>*</span> <span>Campos obligatorios</span>		
+</div>
+-->
 
-<%= render 'form' %>
-
-<%= link_to 'Back', subjects_path %>
+<!-- <%= render 'form' %> -->
+<div><%= link_to 'Volver al listado de materias', subjects_path %></div>

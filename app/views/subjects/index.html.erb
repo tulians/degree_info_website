@@ -4,8 +4,8 @@
   <div class="row">
     <% group.compact.each do |subject| %>
       <div class="col-md-4">
-        <%= image_tag subject.picture_url, width: '100%' if subject.picture.present?%>
-        <h4><%= link_to subject.name, subject %></h4>
+        <%= image_tag subject.picture_url,:size => "240x150", width: '80%' if subject.picture.present?%>
+        <h3 class = "panel-title text-ellipsis"><%= link_to subject.name, subject %></h3>
         <%= subject.description %>
       </div>
     <% end %>
