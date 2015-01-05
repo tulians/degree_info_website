@@ -7,6 +7,8 @@ gem 'rails', '4.1.5'
 gem 'sqlite3'
 # Use carrierwave to upload pictures
 gem 'carrierwave'
+# Use imagemagick for thumbnails
+gem 'mini_magick', '3.8.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
