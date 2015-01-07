@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
 
-#  get 'welcome/new'
-
-#  get 'welcome/create'
-
-#  get 'welcome/index'
-
-  devise_for :users, :controllers => { registrations: 'registrations' } 
+  devise_for :users #, :controllers => { registrations: 'registrations' } 
   resources :comments
   resources :users
   resources :subjects
   resources :welcome
-  
-  # root :to => redirect('/subjects')
 
   get 'pages/info'
 

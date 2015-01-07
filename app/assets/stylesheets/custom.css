@@ -45,18 +45,32 @@ body > footer{
 	padding-top: 0.8em;
 	padding-bottom: 0.8em;
 	margin-bottom: 0.5em;
-	position: relative;
+	position: absolute;
 	right: 0;
   	bottom: 0;
   	left: 0;
 }
 
-
+/* Boxes */
 .elliptical {
 	border: 5px solid #dcd6bf;
 	padding: 20px;
-	width: 2000px;
+	width: 1000px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+.footer, .push {
+	height: 4em;
 }
