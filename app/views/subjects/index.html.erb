@@ -1,9 +1,9 @@
 <h1>Listado de materias</h1>
-
+<!--
 <% @subjects.in_groups_of(3) do |group| %>
   <div class="row">
     <% group.compact.each do |subject| %>
-      <div class="col-md-4">
+      <div class="col-md-4 elliptical">
         <%= image_tag subject.picture_url,:size => "240x150", width: '80%' if subject.picture.present?%>
         <h3 class = "panel-title text-ellipsis"><%= link_to subject.name, subject %></h3>
         <%= subject.description %>
@@ -12,8 +12,8 @@
   </div>
 <% end %>
 
-<!--
-<table>
+-->
+<table class="elliptical">
   <thead>
     <tr>
       <th>Name</th>
@@ -40,5 +40,3 @@
 <br>
 
 <%= link_to 'New Subject', new_subject_path %>
-
--->

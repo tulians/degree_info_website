@@ -5,10 +5,11 @@
 			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
 			<div class="form-group">Descripción</div><div><%= f.text_field :description %></div>
 	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
-	    </blockquote>
-	    <div><%= f.submit "Actualizar", class:"btn btn-primary btn-sm" %></div>
+	    	<div><%= f.submit "Actualizar", class:"btn btn-primary btn-sm" %></div>
+		</blockquote>
 	<%end%>
 </div>
 
 <!-- <%= render 'form' %> -->
-<%= link_to 'Show', @subject %> | <%= link_to 'Back', subjects_path %>
+<%= button_to "Volver a materia", @subject, :method => "get", class:"btn btn-primary btn-sm" %> 
+<%= button_to 'Listado de materias', subjects_path, :method => "get", class:"btn btn-primary btn-sm" %>
