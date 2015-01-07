@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_action :authenticate_user!, only: []
   def new
   end
 
@@ -6,5 +7,8 @@ class WelcomeController < ApplicationController
   end
 
   def index
+  end
+
+  def show
   end
 end
