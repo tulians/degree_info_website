@@ -26,6 +26,7 @@
 	<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
 			<li><a href="/subjects">Materias</a></li>
 	        <li><%= link_to 'Agregar Materia', new_subject_path %></li>
+	        <li><a href="/pages/info">Contacto</a></li>
 	        <p class="navbar-text pull-right">
 	        <% if user_signed_in? %>
 	          Sesión iniciada bajo: <strong><%= current_user.email %></strong>.

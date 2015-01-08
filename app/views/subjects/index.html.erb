@@ -18,6 +18,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Código</th>
       <th>Picture</th>
       <th colspan="3"></th>
     </tr>
@@ -28,6 +29,7 @@
       <tr>
         <td><%= subject.name %></td>
         <td><%= subject.description %></td>
+        <td><%= subject.code %></td>
         <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
         <td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>

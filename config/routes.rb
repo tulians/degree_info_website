@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :subjects
   resources :welcome
+  resources :pages
 
   get 'pages/info'
 
