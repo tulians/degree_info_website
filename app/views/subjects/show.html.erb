@@ -6,6 +6,16 @@
     <p><b>Nombre: </b><%= @subject.name %></p>
     <p><b>Descripción: </b><%= @subject.description %></p>
     <p><b>Código: </b><%= @subject.code %></p>
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+       <div>
+          <strong><%= comment.user_name %></strong>
+           <br /><p><%= comment.body %></p>
+           <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+    <% end %>
+    <%= render 'comments/form' %>
+    </p>
     <p>
       <%= link_to 'Editar', edit_subject_path(@subject) %> |
       <%= link_to 'Destroy', @subject, data: { confirm: 'Are you sure?' }, method: :delete %> |
@@ -15,29 +25,18 @@
 </div>
 
 <!--
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @subject.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@subject.picture_url, :width => 600) if @subject.picture.present? %>
-  <h3>Comments</h3>
-  <% @comments.each do |comment| %>
-	  	<div>
-	  	  <strong><%= comment.user_name %></strong>
-	   	  <br />
-	  	  <p><%= comment.body %></p>
-	      <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-	  	</div>
-  <% end %>
-  <%= render 'comments/form' %>
+<p><strong>Name:</strong><%= @subject.name %></p>
+<p><strong>Description:</strong><%= @subject.description %></p>
+<p><strong>Picture:</strong><%= image_tag(@subject.picture_url, :width => 600) if @subject.picture.present? %>
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+	 <div>
+	  	<strong><%= comment.user_name %></strong>
+	   	 <br /><p><%= comment.body %></p>
+	     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	  </div>
+<% end %>
+<%= render 'comments/form' %>
 </p>
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
