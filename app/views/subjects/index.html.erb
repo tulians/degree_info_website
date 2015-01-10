@@ -1,62 +1,193 @@
-<h1>Listado de materias</h1>
+<h1>Materias</h1>
 
-<% @subjects.in_groups_of(3) do |group| %>
-  <div class="row">
-    <% group.compact.each do |subject| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= link_to image_tag(subject.picture_url), subject, :size => "240x150", width: '80%' if subject.picture.present?%>
-          <div class="caption">
-            <h3 class = "panel-title text-ellipsis"><%= link_to subject.name, subject %></h3>
-            <%= subject.description %>
-          </div>
-        </div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Primer Año
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Código</th>
+              <th>Imagen</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.where(year: "Primero").each do |subject| %>
+              <tr>
+                <td><%= link_to subject.name, subject %></td>
+                <td><%= subject.description %></td>
+                <td><%= subject.code %></td>
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to 'Show', subject %></td>
+                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-    <% end %>
+    </div>
   </div>
-<% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Segundo Año
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Código</th>
+              <th>Imagen</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.where(year: "Segundo").each do |subject| %>
+              <tr>
+                <td><%= link_to subject.name, subject %></td>
+                <td><%= subject.description %></td>
+                <td><%= subject.code %></td>
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to 'Show', subject %></td>
+                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Tercer Año
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Código</th>
+              <th>Imagen</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.where(year: "Tercero").each do |subject| %>
+              <tr>
+                <td><%= link_to subject.name, subject %></td>
+                <td><%= subject.description %></td>
+                <td><%= subject.code %></td>
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to 'Show', subject %></td>
+                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Cuarto Año
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Código</th>
+              <th>Imagen</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.where(year: "Cuarto").each do |subject| %>
+              <tr>
+                <td><%= link_to subject.name, subject %></td>
+                <td><%= subject.description %></td>
+                <td><%= subject.code %></td>
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to 'Show', subject %></td>
+                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Quinto Año
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Código</th>
+              <th>Imagen</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.where(year: "Quinto").each do |subject| %>
+              <tr>
+                <td><%= link_to subject.name, subject %></td>
+                <td><%= subject.description %></td>
+                <td><%= subject.code %></td>
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to 'Show', subject %></td>
+                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--
-<% @subjects.in_groups_of(3) do |group| %>
-  <div class="row">
-    <% group.compact.each do |subject| %>
-      <div class="col-md-4">
-        <%= image_tag subject.picture_url,:size => "240x150", width: '80%' if subject.picture.present?%>
-        <h3 class = "panel-title text-ellipsis"><%= link_to subject.name, subject %></h3>
-        <%= subject.description %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
--->
-
-<!--
-<table class="elliptical">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Código</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <tr>
-        <td><%= subject.name %></td>
-        <td><%= subject.description %></td>
-        <td><%= subject.code %></td>
-        <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
--->
 <%= link_to 'New Subject', new_subject_path %>
+-->
