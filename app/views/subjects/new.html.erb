@@ -3,9 +3,10 @@
 	<%= form_for(@subject) do |f| %>
 		<blockquote>
 			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
-			<div class="form-group">Descripción</div><div><%= f.text_field :description %></div>
+			<div class="form-group">Descripción</div><div><%= f.text_area :description %></div>
 			<div class="form-group">Código</div><div><%= f.text_field :code %></div>
 			<div class="form-group">Año</div><div><%= f.text_field :year %></div>
+			<div class="form-group">Orden</div><div><%= f.text_field :int_ord %></div>
 	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
 	    </blockquote>
 	    <div><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div>
