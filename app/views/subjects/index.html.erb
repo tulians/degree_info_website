@@ -1,7 +1,5 @@
 <h1>Materias</h1>
 
-PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -54,22 +52,14 @@ PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Descripción</th>
               <th>Código</th>
-              <th>Imagen</th>
-              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
             <% @subjects.where(year: "Segundo").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.description %></td>
                 <td><%= subject.code %></td>
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
-                <td><%= link_to 'Show', subject %></td>
-                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
@@ -91,22 +81,14 @@ PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Descripción</th>
               <th>Código</th>
-              <th>Imagen</th>
-              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
             <% @subjects.where(year: "Tercero").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.description %></td>
                 <td><%= subject.code %></td>
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
-                <td><%= link_to 'Show', subject %></td>
-                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
@@ -128,22 +110,14 @@ PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Descripción</th>
               <th>Código</th>
-              <th>Imagen</th>
-              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
             <% @subjects.where(year: "Cuarto").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.description %></td>
                 <td><%= subject.code %></td>
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
-                <td><%= link_to 'Show', subject %></td>
-                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
@@ -165,22 +139,14 @@ PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Descripción</th>
               <th>Código</th>
-              <th>Imagen</th>
-              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
             <% @subjects.where(year: "Quinto").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.description %></td>
                 <td><%= subject.code %></td>
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
-                <td><%= link_to 'Show', subject %></td>
-                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
@@ -189,7 +155,3 @@ PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
     </div>
   </div>
 </div>
-
-<!--
-<%= link_to 'New Subject', new_subject_path %>
--->
