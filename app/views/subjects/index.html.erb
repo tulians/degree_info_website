@@ -1,5 +1,7 @@
 <h1>Materias</h1>
 
+PONER UN RECUADRO PARA CADA MATERIA QUE SEA DIRECTAMENTE UN LINK A LA MISMA
+
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -9,28 +11,28 @@
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <table>
+        <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Código</th>
-              <th>Imagen</th>
-              <th colspan="4"></th>
+              <th>Nombre</th> <!--
+              <th>Descripción</th> -->
+              <th>Código</th> <!--
+              <th>Imagen</th> 
+              <th colspan="2"></th> -->
             </tr>
           </thead>
           <tbody>
-            <% @subjects.where(year: "Primero").each do |subject| %>
+            <% @subjects.where(year: "Primero").curr_order.each do |subject| %>
               <tr>
-                <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.description %></td>
-                <td><%= subject.code %></td>
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td>
+                <td><%= link_to subject.name, subject %></td> <!--
+                <td><%= subject.description %></td> -->
+                <td><%= subject.code %></td> <!--
+                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td> 
                 <td><%= link_to 'Show', subject %></td>
                 <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
               </tr>
             <% end %>
           </tbody>
@@ -48,7 +50,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        <table>
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -59,7 +61,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @subjects.where(year: "Segundo").each do |subject| %>
+            <% @subjects.where(year: "Segundo").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
                 <td><%= subject.description %></td>
@@ -85,7 +87,7 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-        <table>
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -96,7 +98,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @subjects.where(year: "Tercero").each do |subject| %>
+            <% @subjects.where(year: "Tercero").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
                 <td><%= subject.description %></td>
@@ -122,7 +124,7 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body">
-        <table>
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -133,7 +135,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @subjects.where(year: "Cuarto").each do |subject| %>
+            <% @subjects.where(year: "Cuarto").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
                 <td><%= subject.description %></td>
@@ -159,7 +161,7 @@
     </div>
     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       <div class="panel-body">
-        <table>
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -170,7 +172,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @subjects.where(year: "Quinto").each do |subject| %>
+            <% @subjects.where(year: "Quinto").curr_order.each do |subject| %>
               <tr>
                 <td><%= link_to subject.name, subject %></td>
                 <td><%= subject.description %></td>

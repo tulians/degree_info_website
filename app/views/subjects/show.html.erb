@@ -3,44 +3,37 @@
 <div class="row">
   <div class="col-md-9">
     <%= image_tag(@subject.picture_url, :size => "240x150", width: '100%') if @subject.picture.present? %>
-    <p><b>Nombre: </b><%= @subject.name %></p>
+    <p><b>Nombre: </b><%= @subject.name %> <b>Código: </b><%= @subject.code %></p>
     <p><b>Descripción: </b><%= @subject.description %></p>
-    <p><b>Código: </b><%= @subject.code %></p>
-    <p><b>Año: </b><%= @subject.year %></p>
-    <h3>Comments</h3>
-    <% @comments.each do |comment| %>
-       <div>
-          <strong><%= comment.user_name %></strong>
-           <br /><p><%= comment.body %></p>
-           <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-    <% end %>
-    <%= render 'comments/form' %>
-    </p>
+<!--    <p><b>Código: </b><%= @subject.code %></p>
+    <p><b>Año: </b><%= @subject.year %></p> -->
+
+<!-- 
+
+    COMMENTS SHOULD BELONG TO A USER, NOT A SUBJECT
+
+-->
     <p>
       <%= link_to 'Editar', edit_subject_path(@subject) %> |
       <%= link_to 'Destroy', @subject, data: { confirm: 'Are you sure?' }, method: :delete %> |
       <%= link_to 'Back', subjects_path %>
     </p>
+
+
+    <% if @comments.count > 0 %>
+      <h3>Comentarios</h3>
+      <% @comments.each do |comment| %>
+         <div>
+            <strong><%= comment.user_name %></strong>
+             <br /><p><%= comment.body %></p>
+             <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Estás segur@?' } %></p>
+          </div>
+      <% end %>
+    <% end %>
+    
+    <h3>Haz un comentario</h3>
+    <%= render 'comments/form' %>
+    </p>
+   
   </div>
 </div>
-
-<!--
-<p><strong>Name:</strong><%= @subject.name %></p>
-<p><strong>Description:</strong><%= @subject.description %></p>
-<p><strong>Picture:</strong><%= image_tag(@subject.picture_url, :width => 600) if @subject.picture.present? %>
-<h3>Comments</h3>
-<% @comments.each do |comment| %>
-	 <div>
-	  	<strong><%= comment.user_name %></strong>
-	   	 <br /><p><%= comment.body %></p>
-	     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-	  </div>
-<% end %>
-<%= render 'comments/form' %>
-</p>
-
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
-
--->
