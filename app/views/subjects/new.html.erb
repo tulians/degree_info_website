@@ -25,25 +25,14 @@
 		  <div class="col-xs-3 col-md-3"></div>
 		  <div class="col-xs-6 col-md-6"><%= f.text_field :code, autocomplete: "off", class:"form-control" %></div>
 		</div>
-
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
 		  <div class="col-xs-6 col-md-6"><%= f.label "Año" %></div>
 		</div>
 		<div class="row">
 			<div class="col-xs-3 col-md-3"></div>
-			<%= f.label :year, "Primero", :value => "true"  %>
-		    <%= f.radio_button :year, true, :checked => true %>
-		    <%= f.label :year, "Segundo", :value => "false" %>
-		    <%= f.radio_button :year, false %>
-		    <%= f.label :year, "Tercero", :value => "false" %>
-		    <%= f.radio_button :year, false %>
-		    <%= f.label :year, "Cuarto", :value => "false" %>
-		    <%= f.radio_button :year, false %>
-		    <%= f.label :year, "Quinto", :value => "false" %>
-		    <%= f.radio_button :year, false %>
+			<div class="col-xs-6 col-md-6"><%= f.text_field :year, autocomplete: "off", class:"form-control" %></div>
 		</div>
-
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
 		  <div class="col-xs-6 col-md-6"><%= f.label "Orden" %></div>
