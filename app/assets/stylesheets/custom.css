@@ -74,3 +74,11 @@ html, body {
 .footer, .push {
 	height: 4em;
 }
+
+.subtitles{
+	font-family: Verdana, sans-serif;
+	font-size: 2em;
+	padding-bottom: 1em;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}

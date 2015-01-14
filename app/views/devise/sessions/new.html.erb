@@ -1,16 +1,37 @@
-<h2>Entrar al sitio</h2>
+<h2 class="subtitles">Entrar al sitio</h2>
+<div class="container-fluid">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= f.label "Email" %></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= f.email_field :email, autofocus: true , class:"form-control" %></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= f.label "Contraseña" %></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= f.password_field :password, autocomplete: "off" , class:"form-control" %></div>
+    </div>
+    <div class="row" style="padding-top:1em">
+      <% if devise_mapping.rememberable? -%>
+          <div class="col-xs-3 col-md-3"></div>
+          <div class="col-xs-6 col-md-6"><%= f.check_box :remember_me %> <%= f.label "Recordarme" %></div>
+        <% end -%>
+    </div>
+    <div class="row" style="padding-top:1em">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= f.submit "Ingresar" , class:"btn btn-primary" %></div>
+    </div>
+    <% end %>
+    <div class="row" style="padding-top:1em">
+      <div class="col-xs-3 col-md-3"></div>
+      <div class="col-xs-6 col-md-6"><%= render "devise/shared/links" %></div>
+    </div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <blockquote>
-  	<div class="form-group"><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-  <div><%= f.label :Contraseña %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :Recordarme %></div>
-  <% end -%>
-  </blockquote>
-  <div><%= f.submit "Entrar", class:"btn btn-primary btn-sm" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
