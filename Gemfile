@@ -46,3 +46,5 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'hirb'
+
+gem 'rails_12factor'
