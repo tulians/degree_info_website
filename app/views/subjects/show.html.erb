@@ -10,7 +10,12 @@
           </div>
           <div class="panel-body">
             <!--<%= image_tag(@subject.picture_url, :size => "240x150", width: '100%') if @subject.picture.present? %> -->
-            <p><b>Descripción: </b><%= @subject.description %></p>
+            <% unless @subject.description.blank? %>
+              <p><b>Descripción: </b><%= @subject.description %></p>
+            <% end %>
+            <% unless @subject.website.blank?%>
+              <p><b><%= link_to 'Sitio web de la cátedra', @subject.website, target:"_blank" %></b></p>
+            <% end %>
         <!--    <p><b>Código: </b><%= @subject.code %></p>
             <p><b>Año: </b><%= @subject.year %></p> -->
 

@@ -3,7 +3,7 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="row">
       <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= f.label "Email" %></div>
+      <div class="col-xs-6 col-md-6 wfont"><%= f.label "Email" %></div>
     </div>
     <div class="row">
       <div class="col-xs-3 col-md-3"></div>
@@ -11,7 +11,7 @@
     </div>
     <div class="row">
       <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= f.label "Contraseña" %></div>
+      <div class="col-xs-6 col-md-6 wfont"><%= f.label "Contraseña" %></div>
     </div>
     <div class="row">
       <div class="col-xs-3 col-md-3"></div>
@@ -20,7 +20,7 @@
     <div class="row" style="padding-top:1em">
       <% if devise_mapping.rememberable? -%>
           <div class="col-xs-3 col-md-3"></div>
-          <div class="col-xs-6 col-md-6"><%= f.check_box :remember_me %> <%= f.label "Recordarme" %></div>
+          <div class="col-xs-6 col-md-6 wfont"><%= f.check_box :remember_me %> <%= f.label "Recordarme" %></div>
         <% end -%>
     </div>
     <div class="row" style="padding-top:1em">
