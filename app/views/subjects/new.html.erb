@@ -3,7 +3,7 @@
 	<%= form_for(@subject) do |f| %>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Nombre" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Nombre" %></div>
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
@@ -11,7 +11,7 @@
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Descripción" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Descripción" %></div>
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
@@ -19,7 +19,7 @@
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Código" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Código" %></div>
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
@@ -27,7 +27,7 @@
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Año" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Año" %></div>
 		</div>
 		<div class="row">
 			<div class="col-xs-3 col-md-3"></div>
@@ -35,7 +35,7 @@
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Orden" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Orden" %></div>
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
@@ -43,7 +43,15 @@
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.label "Imagen representativa" %></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Sitio Web" %></div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-3 col-md-3"></div>
+		  <div class="col-xs-6 col-md-6"><%= f.text_field :website, autocomplete: "off", class:"form-control" %></div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-3 col-md-3"></div>
+		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Imagen representativa" %></div>
 		</div>
 		<div class="row">
 		  <div class="col-xs-3 col-md-3"></div>
@@ -55,7 +63,7 @@
 		</div>
 		<div class="row" style="padding-top:1em">
 		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= link_to 'Volver al listado de materias', subjects_path %></div>
+		  <div class="col-xs-6 col-md-6"><%= link_to 'Volver al listado de materias', subjects_path, class:"btn btn-primary btn-sm" %></div>
 		</div>
 <!--
 
