@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150120142504) do
+ActiveRecord::Schema.define(version: 20150123134102) do
 
   create_table "comments", force: true do |t|
     t.string   "user_name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150120142504) do
     t.string   "year"
     t.string   "int_ord"
     t.string   "website"
+    t.string   "notes"
   end
 
   create_table "users", force: true do |t|
