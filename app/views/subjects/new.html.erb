@@ -1,86 +1,107 @@
-<h2 class="subtitles">Nueva materia</h2>
-<div class="container-fluid">
-	<%= form_for(@subject) do |f| %>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Nombre" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_field :name, autofocus: true, class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Descripción" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_area :description, class:"form-control", maxlength:"5000" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Código" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_field :code, autocomplete: "off", class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Año" %></div>
-		</div>
-		<div class="row">
-			<div class="col-xs-3 col-md-3"></div>
-			<div class="col-xs-6 col-md-6"><%= f.text_field :year, autocomplete: "off", class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Orden" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_field :int_ord, autocomplete: "off", class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Sitio Web" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_field :website, autocomplete: "off", class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Carpeta de DRIVE" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.text_field :notes, autocomplete: "off", class:"form-control" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6 wfont"><%= f.label "Imagen representativa" %></div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.file_field :picture, class:"form-control" %></div>
-		</div>
-		<div class="row" style="padding-top:1em">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div>
-		</div>
-		<div class="row" style="padding-top:1em">
-		  <div class="col-xs-3 col-md-3"></div>
-		  <div class="col-xs-6 col-md-6"><%= link_to 'Volver al listado de materias', subjects_path, class:"btn btn-primary btn-sm" %></div>
-		</div>
-<!--
+<div class="container">
+    <div class="row">
+        <div class=></div>
+      <div class="col-md-1 col-xs-1">
+      </div>
+      <div class="col-md-10 col-xs-10">
+      <div class="panel panel-personal">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <center><h3 class="negrita">Nueva materia</h3></center>
+          </div>
+        </div>
+        <div class="panel-body">
+			<div class="container-fluid">
+				<%= form_for(@subject) do |f| %>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Nombre" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_field :name, autofocus: true, class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Descripción" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_area :description, class:"form-control", maxlength:"5000" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Código" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_field :code, autocomplete: "off", class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Año" %></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-1 col-md-1"></div>
+						<div class="col-xs-10 col-md-10"><%= f.text_field :year, autocomplete: "off", class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Orden" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_field :int_ord, autocomplete: "off", class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Sitio Web" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_field :website, autocomplete: "off", class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Carpeta de DRIVE" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.text_field :notes, autocomplete: "off", class:"form-control" %></div>
+					</div>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.label "Imagen representativa" %></div>
+					</div>
+					<div class="row" style="padding-bottom:0.5em">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.file_field :picture, class:"form-control" %></div>
+					</div>
+					<hr>
+					<center>
+					<div class="row">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div>
+					</div>
+					</center>
+					<hr>
+					<div class="row" style="padding-top:1em">
+					  <div class="col-xs-1 col-md-1"></div>
+					  <div class="col-xs-10 col-md-10"><%= link_to 'Volver al listado de materias', subjects_path, class:"btn btn-primary btn-sm" %></div>
+					</div>
+			<!--
 
-			<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
-			<div class="form-group">Descripción</div><div><%= f.text_area :description %></div>
-			<div class="form-group">Código</div><div><%= f.text_field :code %></div>
-			<div class="form-group">Año</div><div><%= f.text_field :year %></div>
-			<div class="form-group">Orden</div><div><%= f.text_field :int_ord %></div>
-	    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
-	    <div><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div> -->
-	<%end%>
+						<div class="form-group">Nombre de la materia</div><div><%= f.text_field :name %></div>
+						<div class="form-group">Descripción</div><div><%= f.text_area :description %></div>
+						<div class="form-group">Código</div><div><%= f.text_field :code %></div>
+						<div class="form-group">Año</div><div><%= f.text_field :year %></div>
+						<div class="form-group">Orden</div><div><%= f.text_field :int_ord %></div>
+				    	<div class="form-group"> Imagen representativa </div><div><%= f.file_field :picture %></div>
+				    <div><%= f.submit "Publicar", class:"btn btn-primary btn-sm" %></div> -->
+				<%end%>
+			</div>
+        </div>
+      </div>
+      </div>
+    </div>
 </div>

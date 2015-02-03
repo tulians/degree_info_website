@@ -201,3 +201,10 @@ html, body {
 
 /* ================================================
    ================ FIN TEXTOS ==================== */
+
+#cuerpo{
+	padding-top: 0em;
+	padding-bottom: 60px;
+	min-height: 100%;
+	position: relative;
+}

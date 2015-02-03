@@ -1,157 +1,194 @@
-<h3 class="subtitles">Materias</h3>
-
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Primer Año
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <table class="table table-bordered table-condensed">
-          <thead>
-            <tr>
-              <th>Nombre</th> <!--
-              <th>Descripción</th> -->
-              <th>Código</th> <!--
-              <th>Imagen</th> 
-              <th colspan="2"></th> -->
-            </tr>
-          </thead>
-          <tbody>
-            <% @subjects.where(year: "Primero").curr_order.each do |subject| %>
-              <tr>
-                <td><%= link_to subject.name, subject %></td> <!--
-                <td><%= subject.description %></td> -->
-                <td><%= subject.code %></td> <!--
-                <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td> 
-                <td><%= link_to 'Show', subject %></td>
-                <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-                <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+<div class="container">
+    <div class="row">
+        <div class=></div>
+      <div class="col-md-1 col-xs-1">
+      </div>
+      <div class="col-md-10 col-xs-10">
+      <div class="panel panel-personal">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <center><h3 class="negrita">Materias</h3></center>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Primer Año
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th> <!--
+                          <th>Descripción</th> -->
+                          <th>Código</th> <!--
+                          <th>Imagen</th> 
+                          <th colspan="2"></th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @subjects.where(year: "Primero").curr_order.each do |subject| %>
+                          <tr>
+                            <td><%= link_to subject.name, subject %></td> <!--
+                            <td><%= subject.description %></td> -->
+                            <td><%= subject.code %></td> <!--
+                            <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td> 
+                            <td><%= link_to 'Show', subject %></td>
+                            <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                            <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Segundo Año
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Código</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @subjects.where(year: "Segundo").curr_order.each do |subject| %>
+                          <tr>
+                            <td><%= link_to subject.name, subject %></td>
+                            <td><%= subject.code %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Tercer Año
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Código</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @subjects.where(year: "Tercero").curr_order.each do |subject| %>
+                          <tr>
+                            <td><%= link_to subject.name, subject %></td>
+                            <td><%= subject.code %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Cuarto Año
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Código</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @subjects.where(year: "Cuarto").curr_order.each do |subject| %>
+                          <tr>
+                            <td><%= link_to subject.name, subject %></td>
+                            <td><%= subject.code %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Quinto Año
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Código</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @subjects.where(year: "Quinto").curr_order.each do |subject| %>
+                          <tr>
+                            <td><%= link_to subject.name, subject %></td>
+                            <td><%= subject.code %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Segundo Año
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        <table class="table table-bordered table-condensed">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Código</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @subjects.where(year: "Segundo").curr_order.each do |subject| %>
-              <tr>
-                <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.code %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Tercer Año
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-        <table class="table table-bordered table-condensed">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Código</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @subjects.where(year: "Tercero").curr_order.each do |subject| %>
-              <tr>
-                <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.code %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingFour">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Cuarto Año
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-      <div class="panel-body">
-        <table class="table table-bordered table-condensed">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Código</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @subjects.where(year: "Cuarto").curr_order.each do |subject| %>
-              <tr>
-                <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.code %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingFive">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Quinto Año
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-      <div class="panel-body">
-        <table class="table table-bordered table-condensed">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Código</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @subjects.where(year: "Quinto").curr_order.each do |subject| %>
-              <tr>
-                <td><%= link_to subject.name, subject %></td>
-                <td><%= subject.code %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
 </div>
+
+
+
+<!--
+  <div class="container">
+    <div class="row">
+        <div class=></div>
+      <div class="col-md-1 col-xs-1">
+      </div>
+      <div class="col-md-8 col-xs-8">
+      <div class="well">
+        <div class="container-fluid">
+          <center><h3 class="negrita">Editar materia</h3></center>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+-->

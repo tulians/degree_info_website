@@ -1,3 +1,5 @@
+<% devise_error_messages! %>
+
 <div class="container">
     <div class="row">
         <div class=></div>
@@ -8,14 +10,13 @@
               <div class="container-fluid">
                 <center><h3 class="negrita">Crear una cuenta</h3></center>
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
                     <div class="col-xs-10 col-md-10"><%= f.label "Nombre" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-10 col-md-10"><%= f.text_field :name, autofocus: true , class:"form-control" %></div>
+                    <div class="col-xs-10 col-md-10"><%= f.text_field :name, autofocus: true , class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
@@ -23,7 +24,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-10 col-md-10"><%= f.text_field :surname, autocomplete: true , class:"form-control" %></div>
+                    <div class="col-xs-10 col-md-10"><%= f.text_field :surname, autocomplete: true , class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
@@ -31,7 +32,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-10 col-md-10"><%= f.email_field :email, autocomplete: true , class:"form-control" %></div>
+                    <div class="col-xs-10 col-md-10"><%= f.email_field :email, autocomplete: true , class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
@@ -41,7 +42,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-10 col-md-10"><%= f.password_field :password, autocomplete: "off" , class:"form-control" %></div>
+                    <div class="col-xs-10 col-md-10"><%= f.password_field :password, autocomplete: "off" , class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
@@ -49,7 +50,11 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-10 col-md-10"><%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %></div>
+                    <div class="col-xs-10 col-md-10"><%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", :required => "required" %></div>
+                  </div>
+                  <div class="row" style="padding-top:1em">
+                    <div class="col-xs-1 col-md-1"></div>
+                    <div class="col-xs-10 col-md-10"><span class="error">Todos los campos son obligatorios</span></div>
                   </div>
                   <center>
                     <div class="row" style="padding-top:1em">
