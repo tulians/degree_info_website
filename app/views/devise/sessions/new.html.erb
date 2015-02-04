@@ -1,37 +1,46 @@
-<h2 class="subtitles">Entrar al sitio</h2>
-<div class="container-fluid">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container">
     <div class="row">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6 wfont"><%= f.label "Email" %></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= f.email_field :email, autofocus: true , class:"form-control" %></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6 wfont"><%= f.label "Contraseña" %></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= f.password_field :password, autocomplete: "off" , class:"form-control" %></div>
-    </div>
-    <div class="row" style="padding-top:1em">
-      <% if devise_mapping.rememberable? -%>
-          <div class="col-xs-3 col-md-3"></div>
-          <div class="col-xs-6 col-md-6 wfont"><%= f.check_box :remember_me %> <%= f.label "Recordarme" %></div>
-        <% end -%>
-    </div>
-    <div class="row" style="padding-top:1em">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= f.submit "Ingresar" , class:"btn btn-primary" %></div>
-    </div>
-    <% end %>
-    <div class="row" style="padding-top:1em">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6"><%= render "devise/shared/links" %></div>
+        <div class=></div>
+      <div class="col-md-3 col-xs-3">
+      </div>
+      <div class="col-md-6 col-xs-6">
+            <div class="well">
+                <center><h3 class="negrita">Entrar al sitio</h3></center>
+                <div class="container-fluid">
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="row">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <div class="col-xs-8 col-md-8"><%= f.label "Email" %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <div class="col-xs-8 col-md-8"><%= f.email_field :email, autofocus: true , class:"form-control" %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <div class="col-xs-8 col-md-8"><%= f.label "Contraseña" %></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <div class="col-xs-8 col-md-8"><%= f.password_field :password, autocomplete: "off" , class:"form-control" %></div>
+                    </div>
+                    <div class="row" style="padding-top:1em">
+                      <% if devise_mapping.rememberable? -%>
+                          <div class="col-xs-2 col-md-2"></div>
+                          <div class="col-xs-8 col-md-8"><%= f.check_box :remember_me %> <%= f.label "Recordarme" %></div>
+                        <% end -%>
+                    </div>
+                    <div class="row" style="padding-top:1em">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <center><div class="col-xs-8 col-md-8"><%= f.submit "Ingresar" , class:"btn btn-primary" %></div></center>
+                    </div>
+                    <% end %>
+                    <div class="row" style="padding-top:1em">
+                      <div class="col-xs-2 col-md-2"></div>
+                      <div class="col-xs-8 col-md-8"><%= render "devise/shared/links" %></div>
+                    </div>
+                </div>
+            </div>
+      </div>
     </div>
 </div>
-
-

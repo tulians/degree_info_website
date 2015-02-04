@@ -41,28 +41,24 @@
 	  </div>
 	</nav>
 
-	<div class="container">
-		<% if notice %>
-  			<p class="alert alert-success"><%= notice %></p>
+		<div id="cuerpo">
+			<div class="container">
+				<%= render partial: "layouts/flash_messages", locals: {flash: flash} %>
+			</div>
+			<%= yield %>
+		</div>
+
+		<!-- El siguiente if corrige la vista del footer temporalmente. Cuando se condigure la sección 'Noticias', y el cuerpo se rellene, hay que eliminarlo -->
+		<% if controller.controller_name == 'welcome' %>
+			<div style="padding-top:12em"></div> 
 		<% end %>
-		<% if alert %>
-  			<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
-
-
-	  	<%= yield %>
-	
-
-	</div>
+	<footer>
+		<center>
+			<span class="negrita">Julián Ailán 2015</span>
+		</center>
+	</footer>
 
 </body>
-<!--
-<footer>
-  <div class="container">
-    <nombre del grupo> 2015
-  </div>
-</footer>
--->
 <script src="//railsgirls.com/assets/bootstrap.js"></script>
 
 </html>

@@ -49,7 +49,7 @@ body > footer{
 	padding-top: 0.8em;
 	padding-bottom: 0.8em;
 	margin-bottom: 0.5em;
-	position: absolute;
+	position: relative;
 	right: 0;
   	bottom: 0;
   	left: 0;
@@ -135,3 +135,76 @@ html, body {
 
 /* ================================================
    ================== FIN PANELES ================= */
+
+   /* =================== TEXTOS =====================
+   ================================================ */
+
+.negrita{
+	font-weight: bold;
+}
+
+.italica{
+	font-style: italic;
+}
+
+.error{
+	font-weight: bold;
+	color: red;
+}
+
+.destacado{
+	font-weight: bold;
+	color: dodgerblue;
+}
+
+.enlace{
+	font-weight: bold;
+	color: #47ccb1;
+}
+
+.linea{
+	border:0;
+	border-top:3px solid #00FDFE;
+	width:15%;
+	margin:0.5em auto;	
+}
+
+.text-ellipsis{ /* Cuando hay overflow, en vez de saltar de línea, se trunca el texto y se agregan ... */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.text-nowrap{ /* Cuando hay overflow, el texto no salta de línea */
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.fuente-predeterminada{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.sombra{
+	text-shadow: 4px 4px 4px black;
+}
+
+.sombra-blanca{
+	text-shadow: 4px 4px 4px white;
+}
+
+.campo-obligatorio{
+	vertical-align: super;
+	color: red;
+	font-weight: bold;
+	display: inline;
+}
+
+/* ================================================
+   ================ FIN TEXTOS ==================== */
+
+#cuerpo{
+	padding-top: 0em;
+	padding-bottom: 60px;
+	min-height: 100%;
+	position: relative;
+}
