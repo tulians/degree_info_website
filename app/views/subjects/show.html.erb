@@ -6,19 +6,23 @@
       <div class="col-md-8">
         <div class="panel panel-personal">
           <div class="panel-heading">
-            <h3 class="panel-title"><%= @subject.name %> | Código: <%= @subject.code %></h3>
+            <center><h3 class="panel-title"><span class="negrita"><%= @subject.name %> | Código: </span><%= @subject.code %></h3></center>
           </div>
           <div class="panel-body">
             <!--<%= image_tag(@subject.picture_url, :size => "240x150", width: '100%') if @subject.picture.present? %> -->
             <% unless @subject.description.blank? %>
-              <p><b>Descripción: </b><%= @subject.description %></p>
+              <p><span class="negrita">Descripción: </span><%= @subject.description %></p>
             <% end %>
+            <hr>
+            <center>
             <% unless @subject.website.blank?%>
-              <p><b><%= link_to 'Sitio web de la cátedra', @subject.website, target:"_blank" %></b></p>
+              <p><%= link_to 'Sitio web de la cátedra', @subject.website, target:"_blank", class:"destacado" %></p>
             <% end %>
             <% unless @subject.notes.blank?%>
-              <p><b><%= link_to 'Apuntes, examenes y resumenes', @subject.notes, target:"_blank" %></b></p>
+              <p><%= link_to 'Apuntes, exámenes y resúmenes', @subject.notes, target:"_blank", class:"destacado" %></p>
             <% end %>
+
+            <hr>
         <!--    <p><b>Código: </b><%= @subject.code %></p>
             <p><b>Año: </b><%= @subject.year %></p> -->
 
@@ -27,20 +31,20 @@
             COMMENTS SHOULD BELONG TO A USER, NOT A SUBJECT
 
         -->
-            <p>
-              <%= link_to 'Editar', edit_subject_path(@subject) %> |
-              <%= link_to 'Destroy', @subject, data: { confirm: 'Are you sure?' }, method: :delete %> |
-              <%= link_to 'Back', subjects_path %>
+            <p class="destacado">
+              <%= link_to 'Editar', edit_subject_path(@subject)%> |
+              <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |
+              <%= link_to 'Volver', subjects_path %>
             </p>
-
-
+            </center>
+            <hr>
             <% if @comments.count > 0 %>
               <h3 class="panel-title">Comentarios</h3>
               <% @comments.each do |comment| %>
                  <div>
                     <strong><%= comment.user_name %></strong>
                      <br /><p><%= comment.body %></p>
-                     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Estás segur@?' } %></p>
+                     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: '¿Estás segur@?' } %></p>
                   </div>
               <% end %>
             <% end %>

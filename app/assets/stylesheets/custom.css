@@ -49,7 +49,7 @@ body > footer{
 	padding-top: 0.8em;
 	padding-bottom: 0.8em;
 	margin-bottom: 0.5em;
-	position: absolute;
+	position: relative;
 	right: 0;
   	bottom: 0;
   	left: 0;
@@ -201,3 +201,10 @@ html, body {
 
 /* ================================================
    ================ FIN TEXTOS ==================== */
+
+#cuerpo{
+	padding-top: 0em;
+	padding-bottom: 60px;
+	min-height: 100%;
+	position: relative;
+}
