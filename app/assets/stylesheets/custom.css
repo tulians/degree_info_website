@@ -103,7 +103,7 @@ html, body {
 
 .panel-personal > .panel-heading {
   color: black;
-  background-color: #C7CACB;
+  background-color: #535149;
 }
 
 .panel-personal > .panel-heading .badge {
@@ -141,6 +141,10 @@ html, body {
 
 .negrita{
 	font-weight: bold;
+}
+
+.blanca {
+	color: white;
 }
 
 .italica{
