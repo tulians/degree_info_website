@@ -24,8 +24,8 @@
 	    <div class="collapse navbar-collapse">
 	      <ul class="nav navbar-nav">
 	<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
-			<li><a href="/subjects" class="hvr-wobble-horizontal">Materias</a></li>
-	        <li><%= link_to 'Agregar Materia', new_subject_path , class:"hvr-wobble-horizontal" %></li>
+			<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
+	        <li><%= link_to 'Fechas y horarios', pages_path , class:"hvr-wobble-horizontal" %></li>
 	        <li><a href="/pages/info"  class="hvr-wobble-horizontal">Contacto</a></li>
 	        <p class="navbar-text pull-right">
 	        <% if user_signed_in? %>
