@@ -23,14 +23,6 @@
             <% end %>
 
             <hr>
-        <!--    <p><b>Código: </b><%= @subject.code %></p>
-            <p><b>Año: </b><%= @subject.year %></p> -->
-
-        <!-- 
-
-            COMMENTS SHOULD BELONG TO A USER, NOT A SUBJECT
-
-        -->
             <p class="destacado">
               <%= link_to 'Editar', edit_subject_path(@subject)%> |
               <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |
@@ -38,22 +30,27 @@
             </p>
             </center>
             <hr>
-            <% if @comments.count > 0 %>
-              <h3 class="panel-title">Comentarios</h3>
-              <% @comments.each do |comment| %>
-                 <div>
-                    <strong><%= comment.user_name %></strong>
-                     <br /><p><%= comment.body %></p>
-                     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: '¿Estás segur@?' } %></p>
-                  </div>
+            <center>
+              <h4 class="negrita">Haz un comentario</h4>
+              <%= form_tag new_comment_path(subject_id_param: @subject.id) do %>
+                <%= text_area_tag "body", "", :placeholder => "Ingrese aquí su comentario...", :required => "required", class: "form-control", maxlength: "2000" %>
+                <div style="padding-top:1em"></div>
+                <%= submit_tag "Comentar", class: "btn btn-primary" %>
+                <div style="padding-bottom:1em"></div>
               <% end %>
+            </center>            
+            <% if @comments.count == 0%>
+              <p class="italica"> No se han realizado comentarios</p>
+            <% else %>
+              <ul class="list-group">
+                <% @comments.each do |c| %>
+                  <li class="list-group-item"><span class="destacado"><%=c.user_name%>: </span><%=c.body%>
+                    <center style="padding-top:1em"><p class="italica"><%= localize c.created_at.in_time_zone('Buenos Aires'), format: :long %></p></center>
+                  </li>
+                <% end %>
+              </ul>
             <% end %>
-
-            <h3>Haz un comentario</h3>
-            <%= render 'comments/form' %>
-            </p>
          </div>
-
       </div>
     </div>
   </div>

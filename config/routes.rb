@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users #, :controllers => { registrations: 'registrations' } 
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, only: [:index, :show, :edit, :update]
   resources :comments
   resources :users
   resources :subjects
   resources :welcome
   resources :pages
+
+  post 'comments/new'
 
   get 'pages/info'
 
