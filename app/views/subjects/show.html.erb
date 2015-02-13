@@ -40,7 +40,7 @@
               <% end %>
             </center>            
             <% if @comments.count == 0%>
-              <p class="italica"> No se han realizado comentarios</p>
+              <center><p class="italica"> No se han realizado comentarios</p></center>
             <% else %>
               <ul class="list-group">
                 <% @comments.each do |c| %>

@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     comment.user_name = current_user.name + " " + current_user.surname
     comment.save
     redirect_to subject_path(@subject.id)
-    flash[:notice] = "Su oferta fue cargada correctamente."
+    flash[:notice] = "Su comentario fue cargado correctamente."
   end
 
   # GET /comments/1/edit
