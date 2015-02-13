@@ -6,7 +6,7 @@
       <div class="col-md-8">
         <div class="panel panel-personal">
           <div class="panel-heading">
-            <center><h3 class="panel-title blanca"><span><%= @subject.name %> | Código: </span><%= @subject.code %></h3></center>
+            <center><h3 class="panel-title blanca negrita sombra"><%= @subject.name %> | Código: <%= @subject.code %></h3></center>
           </div>
           <div class="panel-body">
             <!--<%= image_tag(@subject.picture_url, :size => "240x150", width: '100%') if @subject.picture.present? %> -->
@@ -25,7 +25,7 @@
             <hr>
             <p class="destacado">
               <%= link_to 'Editar', edit_subject_path(@subject)%> |
-              <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |
+            <!--  <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |-->
               <%= link_to 'Volver', subjects_path %>
             </p>
             </center>

@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DegreeInfoWebsite</title>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="ai_icon.jpg"/>
-</head>
-<body>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	  <div class="container">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand hvr-bounce-in negrita" href="/">Ingeniería en Computación - UNLP</a>
-	    </div>
-	    <div class="collapse navbar-collapse">
-	      <ul class="nav navbar-nav">
-	<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
-			<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
-	        <li><%= link_to 'Fechas y horarios', pages_path , class:"hvr-wobble-horizontal" %></li>
-	        <li><a href="/pages/info"  class="hvr-wobble-horizontal">Contacto</a></li>
-	        <p class="navbar-text pull-right">
-	        <% if user_signed_in? %>
-	          <strong><%= current_user.email %></strong>
-	          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-	          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-	        <% else %>
-	          <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-	          <%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %>
-	        <% end %>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+	<head>
+	  <title>DegreeInfoWebsite</title>
+	  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
+	  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  <link rel="shortcut icon" href="ai_icon.jpg"/>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand hvr-bounce-in negrita" href="/">Ingeniería en Computación - UNLP</a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		      <ul class="nav navbar-nav">
+		<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
+				<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
+		        <li><%= link_to 'Fechas y horarios', pages_path , class:"hvr-wobble-horizontal" %></li>
+		        <li><a href="/pages/info"  class="hvr-wobble-horizontal">Contacto</a></li>
+		        <p class="navbar-text pull-right">
+		        <% if user_signed_in? %>
+		          <strong><%= current_user.email %></strong>
+		          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+		          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+		        <% else %>
+		          <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+		          <%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %>
+		        <% end %>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
 
-		<div id="cuerpo">
-			<div class="container">
-				<%= render partial: "layouts/flash_messages", locals: {flash: flash} %>
+			<div id="cuerpo">
+				<div class="container">
+					<%= render partial: "layouts/flash_messages", locals: {flash: flash} %>
+				</div>
+				<%= yield %>
 			</div>
-			<%= yield %>
-		</div>
 
-		<!-- El siguiente if corrige la vista del footer temporalmente. Cuando se condigure la sección 'Noticias', y el cuerpo se rellene, hay que eliminarlo -->
-		<% if controller.controller_name == 'welcome' %>
-			<div style="padding-top:12em"></div> 
-		<% end %>
-	<footer>
-		<center>
-			<span class="negrita">Julián Ailán 2015</span>
-		</center>
-	</footer>
+			<!-- El siguiente if corrige la vista del footer temporalmente. Cuando se condigure la sección 'Noticias', y el cuerpo se rellene, hay que eliminarlo -->
+			<% if controller.controller_name == 'welcome' %>
+				<div style="padding-top:12em"></div> 
+			<% end %>
+		<footer>
+			<center>
+				<span class="negrita">Julián Ailán 2015</span>
+			</center>
+		</footer>
 
-</body>
-<script src="//railsgirls.com/assets/bootstrap.js"></script>
-
+	</body>
+	<script src="//railsgirls.com/assets/bootstrap.js"></script>
 </html>

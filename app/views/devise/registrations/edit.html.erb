@@ -19,7 +19,7 @@
                   </div> 
               -->
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <div>Esperando confirmación: <%= resource.unconfirmed_email %></div>
                   <% end %>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
@@ -27,7 +27,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.password_field :password, autocomplete: "off", class:"form-control", :required => "required" %></div>
+                    <div class="col-xs-8 col-md-8"><%= f.password_field :password,autofocus: true, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
                     <div class="col-xs-1 col-md-1"></div>
