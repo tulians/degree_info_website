@@ -69,6 +69,13 @@ GEM
     mini_magick (3.8.0)
       subexec (~> 0.2.1)
     minitest (5.5.1)
+    mobileesp_converted (0.2.3)
+    mobvious (0.3.2)
+      mobileesp_converted (~> 0.2.0)
+      rack (>= 1.1.0)
+    mobvious-rails (0.1.2)
+      activesupport
+      mobvious
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
@@ -152,6 +159,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (= 3.8.0)
+  mobvious
+  mobvious-rails
   rails (= 4.1.5)
   rails_12factor
   sass-rails (~> 4.0.3)

@@ -2,52 +2,52 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-md-3 col-xs-3">
+      <div class="col-md-3">
       </div>
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
             <div class="well">
               <div class="container-fluid">
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <!--
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.label "Email" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Email" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.email_field :email, autocomplete: true , class:"form-control" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.email_field :email, autocomplete: true , class:"form-control" %></div>
                   </div> 
               -->
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <div>Esperando confirmación: <%= resource.unconfirmed_email %></div>
                   <% end %>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.label "Contraseña" %> <i>(dejar en blanco si no la vas a cambiar)</i></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña" %> <i>(dejar en blanco si no la vas a cambiar)</i></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.password_field :password,autofocus: true, autocomplete: "off", class:"form-control", :required => "required" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.password_field :password,autofocus: true, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.label "Confirmar contraseña" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Confirmar contraseña" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", :required => "required" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.label "Contraseña actual" %> <i>(la necesitamos para poder verificar que seas vos quien hace los cambios)</i></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña actual" %> <i>(la necesitamos para poder verificar que seas vos quien hace los cambios)</i></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8"><%= f.password_field :current_password, autocomplete: "off", class:"form-control", :required => "required" %></div></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.password_field :current_password, autocomplete: "off", class:"form-control", :required => "required" %></div></div>
                   </div>
                   <div class="row" style="padding-top:1em">
-                    <div class="col-xs-1 col-md-1"></div>
-                    <div class="col-xs-8 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary btn-sm" %></div>
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-12 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary btn-sm" %></div>
                   </div>
                 <% end %>
               <!--
