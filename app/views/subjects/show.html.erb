@@ -24,8 +24,10 @@
 
             <hr>
             <p class="destacado">
-              <%= link_to 'Editar', edit_subject_path(@subject)%> |
-            <!--  <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |-->
+              <% if ADMINS.include?(current_user.email)%>
+                <%= link_to 'Editar', edit_subject_path(@subject)%> |
+                <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |
+              <% end %>
               <%= link_to 'Volver', subjects_path %>
             </p>
             </center>

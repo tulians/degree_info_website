@@ -1,0 +1,1 @@
+ADMINS = ["julianailan@outlook.com","lucashour1993@gmail.com"]
