@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'
-gem 'sqlite3'
+gem 'pg'
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'sass-rails', '~> 4.0.3'
