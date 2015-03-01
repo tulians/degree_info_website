@@ -32,27 +32,49 @@
             </p>
             </center>
             <hr>
+          </div>
+          <div class="panel-footer">
             <center>
               <h4 class="negrita">Haz un comentario</h4>
               <%= form_tag new_comment_path(subject_id_param: @subject.id) do %>
                 <%= text_area_tag "body", "", :placeholder => "Ingrese aquí su comentario...", :required => "required", class: "form-control", maxlength: "2000" %>
                 <div style="padding-top:1em"></div>
                 <%= submit_tag "Comentar", class: "btn btn-primary" %>
-                <div style="padding-bottom:1em"></div>
               <% end %>
-            </center>            
+            </center>
+            <hr>
             <% if @comments.count == 0%>
               <center><p class="italica"> No se han realizado comentarios</p></center>
             <% else %>
               <ul class="list-group">
                 <% @comments.each do |c| %>
-                  <li class="list-group-item"><span class="destacado"><%=c.user_name%>: </span><%=c.body%>
-                    <center style="padding-top:1em"><p class="italica"><%= localize c.created_at.in_time_zone('Buenos Aires'), format: :long %></p></center>
-                  </li>
+                  <ul class="list-group">
+                    <li class="list-group-item"><span class="negrita"><%=c.body%></span>
+                      <center style="padding-top:1em"><p class="italica"><%= localize c.created_at.in_time_zone('Buenos Aires'), format: :long %></p></center>
+                      <% if c.answers.count != 0%>
+                        <% c.answers.each do |a|%>
+                          <hr>
+                          <div style="text-align:right">
+                            <span class="negrita"><%=a.body%></span>
+                            <div style="padding-top:1em"><p class="italica"><%= localize a.created_at.in_time_zone('Buenos Aires'), format: :long %></p></div>
+                          </div>
+                        <% end %>
+                      <% end %>
+                      <hr>
+                      <div>
+                    <%= form_tag new_answer_path(comment_id_param: c.id, subject_id_param: @subject.id) do %>
+                      <%= text_area_tag "body", "", :placeholder => "Ingrese aquí su respuesta...", :required => "required", class: "form-control", maxlength: "2000" %>
+                      <div style="padding-top:1em"></div>
+                      <%= submit_tag "Responder", class: "btn btn-primary", style:"float:right;clear:both;"%>
+                      <div style="padding-bottom:2em"></div>
+                    <% end %>
+                  </div>
+                    </li>
+                  </ul>
                 <% end %>
               </ul>
             <% end %>
-         </div>
+          </div>
       </div>
     </div>
   </div>
