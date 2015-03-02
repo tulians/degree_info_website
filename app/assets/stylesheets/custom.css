@@ -212,3 +212,15 @@ html, body {
 	min-height: 100%;
 	position: relative;
 }
+
+.img-icon {
+  overflow: hidden;
+  display: inline-block;
+  height: 10em;
+  padding: 4px;
+  line-height: 1.42857143;
+  border-radius: 50%;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
