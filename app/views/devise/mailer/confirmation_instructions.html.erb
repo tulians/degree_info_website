@@ -1,9 +1,11 @@
-<p>Bienvenido, <b><%= @email %></b>!</p>
+<p>Bienvenido, <b><%=@resource.name%> <%=@resource.surname%></b>!</p>
 <br>
-<p>Creaste de forma exitosa una cuenta en IngCompUNLP, la comunidad estudiantil de la carrera de Ingeniería en Computación de la Universidad Nacional de La Plata. Para continuar con su acceso, deberá confirmar su cuenta haciendo click en el siguiente enlace:</p>
+<p>Creaste de forma exitosa una cuenta en IngCompUNLP, la comunidad estudiantil de la carrera de Ingeniería en Computación de la Universidad Nacional de La Plata, con tu correo electrónico <b><%=@resource.email%></b>. Para continuar con tu acceso, deberás confirmar tu cuenta haciendo click en el siguiente enlace:</p>
 <br>
 <center><p><b><%= link_to 'Confirmar cuenta', confirmation_url(@resource, confirmation_token: @token) %></b></p></center>
 <br>
 <p>Saludos,</p>
 <br>
 <center><p><b>Equipo de administradores de IngCompUNLP</b></p></center>
+<br>
+<p><b><%= link_to 'Sitio oficial', root_url %></b></p>

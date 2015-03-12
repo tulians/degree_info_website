@@ -26,6 +26,9 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
+
   # Generate digests for assets URLs.
   config.assets.digest = true
 
@@ -85,5 +88,3 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "ingcompunlp.herokuapp.com" } # Al usar url_for utilizar la opción 'only_path: false' para que agregue este host
  
 end
-
-ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
