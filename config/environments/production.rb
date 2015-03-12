@@ -75,13 +75,15 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-
   config.active_record.dump_schema_after_migration = false
-  config.serve_static_assets = true
-  config.assets.compile = true
+  config.assets.initialize_on_precompile = false
+
+  config.assets.precompile += %w(custom.css)
 
   # Host por defecto utilizado para formar las URL que pueden ser especificadas en
   # los emails enviados. Es importante porque se deben enviar URL absolutas.
   config.action_mailer.default_url_options = { host: "ingcompunlp.herokuapp.com" } # Al usar url_for utilizar la opción 'only_path: false' para que agregue este host
  
 end
+
+ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
