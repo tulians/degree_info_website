@@ -79,5 +79,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.serve_static_assets = true
   config.assets.compile = true
-  
+
+  # Host por defecto utilizado para formar las URL que pueden ser especificadas en
+  # los emails enviados. Es importante porque se deben enviar URL absolutas.
+  config.action_mailer.default_url_options = { host: "ingcompunlp.herokuapp.com" } # Al usar url_for utilizar la opción 'only_path: false' para que agregue este host
+ 
 end
