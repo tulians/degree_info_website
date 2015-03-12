@@ -24,10 +24,10 @@ module DegreeInfoWebsite
     # Configuración del Mailer. Se utiliza Gmail
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-        address:              'smtp.gmail.com',
+        address:              'smtp-mail.outlook.com',
         port:                 587,
-        user_name:            'ingcomp.unlp@gmail.com',
-        password:             'administrador12345',
+        user_name:            'ingcomp.unlp@outlook.com',
+        password:             'administrador123',
         authentication:       'plain',
         enable_starttls_auto: true  }
 
