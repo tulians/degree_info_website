@@ -27,7 +27,7 @@ module DegreeInfoWebsite
         address:              'smtp.gmail.com',
         port:                 587,
         user_name:            'ingcomp.unlp@gmail.com',
-        password:             'ingcompunlpadmin',
+        password:             'administrador12345',
         authentication:       'plain',
         enable_starttls_auto: true  }
 
