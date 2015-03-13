@@ -6,7 +6,8 @@ class UploadsController < ApplicationController
 	def create
 		if (!params[:upload].nil?)
 			params[:upload][:file].each do |up|
-				@upload = Upload.create(:file=>up)
+				user = current_user.id
+				@upload = Upload.create(file:up,user_id:user)
 				@upload.save
 				flash[:notice] = "Archivo/s subido/s exitosamente. Quedará/n para verificación, luego serán publicados en el sitio web."
 			end
