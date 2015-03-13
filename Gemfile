@@ -18,3 +18,6 @@ gem 'rails_12factor'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'mobvious'
 gem 'mobvious-rails'
+
+gem 'google_drive'
+gem 'oauth2'
