@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   resources :comments
   resources :answers
   resources :pages
+  resources :uploads, only: [:create]
 
   post 'comments/new'
   post 'answers/new'
+  get 'uploads/new'
+  post 'uploads/create'
 
   root 'welcome#index'
   

@@ -32,6 +32,8 @@
             </p>
             </center>
             <hr>
+            <%= render 'uploads/new' %>
+            <hr>
           </div>
           <div class="panel-footer">
             <center>
@@ -39,7 +41,7 @@
               <%= form_tag new_comment_path(subject_id_param: @subject.id) do %>
                 <%= text_area_tag "body", "", :placeholder => "Ingrese aquí su comentario...", :required => "required", class: "form-control", maxlength: "2000" %>
                 <div style="padding-top:1em"></div>
-                <%= submit_tag "Comentar", class: "btn btn-primary" %>
+                <%= submit_tag "Comentar", class: "btn btn-primary negrita" %>
               <% end %>
             </center>
             <hr>
