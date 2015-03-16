@@ -26,13 +26,18 @@
 		      <ul class="nav navbar-nav">
 		<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
 				<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
-		        <li><%= link_to 'Fechas y horarios', pages_path , class:"hvr-wobble-horizontal" %></li>
-		        <li><a href="/pages/info"  class="hvr-wobble-horizontal">Contacto</a></li>
+		        <li><%= link_to 'Calendario', calendar_index_path , class:"hvr-wobble-horizontal" %></li>
+		        <li><%= link_to 'Contacto', contact_index_path , class:"hvr-wobble-horizontal" %></li>
 		        <p class="navbar-text pull-right">
 		        <% if user_signed_in? %>
-		          <strong><%= current_user.email %></strong>
-		          <%= link_to 'Editar perfil', edit_user_registration_path,:class => 'navbar-link' %> |
-		          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+		          <li role="presentation" class="dropdown">
+		            <a class="dropdown-toggle negrita" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><strong><%= current_user.email %></strong><span class="caret"></span>
+		            </a>
+		            <ul class="dropdown-menu" role="menu">
+		              <li><%= link_to 'Editar perfil', edit_user_registration_path,:class => 'navbar-link' %></li>
+		              <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+		            </ul>
+		          </li>		          
 		        <% else %>
 		          <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
 		          <%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %>
