@@ -224,3 +224,10 @@ html, body {
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
+
+.header-right{
+  margin-top: 0.5em;
+  margin-right: 2em;
+  margin-left: 1em;
+  font-weight: bold;
+}

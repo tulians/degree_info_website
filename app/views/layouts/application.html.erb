@@ -3,8 +3,6 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	  <title>IngCompUNLP - Sitio del estudiante universitario</title>
-	  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-	  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
@@ -12,7 +10,7 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="box-shadow: 2px 2px 2px rgba(150, 150, 150, 1)">
-		  <div class="container">
+		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		        <span class="sr-only">Toggle navigation</span>
@@ -20,29 +18,34 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand hvr-bounce-in" href="/">Ingeniería en Computación <span class="negrita">UNLP</span></a>
+		      <a class="navbar-brand hvr-float-shadow" href="/">Ingeniería en Computación <span class="negrita">UNLP</span></a>
 		    </div>
 		    <div class="collapse navbar-collapse">
-		      <ul class="nav navbar-nav">
-		<!--    <li class="active"><a href="/subjects">Materias</a></li> -->
-				<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
-		        <li><%= link_to 'Calendario', calendar_index_path , class:"hvr-wobble-horizontal" %></li>
-		        <li><%= link_to 'Contacto', contact_index_path , class:"hvr-wobble-horizontal" %></li>
-		        <p class="navbar-text pull-right">
-		        <% if user_signed_in? %>
-		          <li role="presentation" class="dropdown">
-		            <a class="dropdown-toggle negrita" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><strong><%= current_user.email %></strong><span class="caret"></span>
-		            </a>
-		            <ul class="dropdown-menu" role="menu">
-		              <li><%= link_to 'Editar perfil', edit_user_registration_path,:class => 'navbar-link' %></li>
-		              <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-		            </ul>
-		          </li>		          
-		        <% else %>
-		          <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-		          <%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %>
-		        <% end %>
-		      </ul>
+				<ul class="nav navbar-nav">
+					<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
+					<li><%= link_to 'Calendario', calendar_index_path , class:"hvr-wobble-horizontal" %></li>
+					<li><%= link_to 'Contacto', contact_index_path , class:"hvr-wobble-horizontal" %></li>
+					<% if user_signed_in? %>
+						<li><%= link_to 'Preguntas', questions_path , class:"hvr-wobble-horizontal" %></li>
+					<% end %>
+				</ul>
+		        <ul class="nav navbar-nav navbar-right">
+			        <% if user_signed_in? %>
+			          <li role="presentation" class="dropdown">
+			            <a class="dropdown-toggle negrita" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Mi cuenta<span class="caret"></span>
+			            </a>
+			            <ul class="dropdown-menu" role="menu">
+			              <li><%= link_to 'Editar perfil', edit_user_registration_path,:class => 'navbar-link' %></li>
+			              <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+			            </ul>
+			          </li>		          
+			        <% else %>
+			        <ul class="header-right">
+				          <li><%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %></li> |
+				          <li><%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %></li>
+			          </ul>
+			        <% end %>
+		      	</ul>
 		    </div>
 		  </div>
 		</nav>
@@ -77,7 +80,5 @@
 				<span class="negrita"><span class="destacado">Julián Ailán</span> | <span class="destacado">Lucas Hourquebie</span> | 2015</span>
 			</center>
 		</footer>
-
 	</body>
-	<script src="//railsgirls.com/assets/bootstrap.js"></script>
 </html>
