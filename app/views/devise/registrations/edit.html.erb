@@ -39,7 +39,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña actual" %>  <span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña actual" %>  <!--<span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span>--><span class="error" style="vertical-align:top">*</span>
                     </div>
                   </div>
                   <div class="row">
@@ -48,11 +48,11 @@
                   </div>
                   <div class="row" style="padding-top:1em">
                     <div class="col-md-2"></div>
-                    <center><div class="col-xs-12 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary" %></div>
+                    <center><div class="col-xs-12 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary negrita" %></div>
                   </div>
                 <% end %>
                 <hr>
-                <span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span> <span style="padding-top:1em">Necesitamos que ingrese su contraseña actual por cuestiones de seguridad, para verificar y procesar la actualización de información.</span>
+                <!--<span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span>--><span class="error" style="vertical-align:top">*</span> <span style="padding-top:1em">Necesitamos que ingrese su contraseña actual por cuestiones de seguridad, para verificar y procesar la actualización de información.</span>
               <!--
                 <h3>Cancel my account</h3>
                 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
