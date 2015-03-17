@@ -1,12 +1,48 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-xs-12 col-md-8">
+		<div class="col-xs-12 col-md-6">
 			<div class="well">
-				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">últimas preguntas realizadas</h3>
+				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Últimas preguntas realizadas</h3>
+				<% @questions.each do |q|%>
+					<ul class="list-group" style="list-style-type:none">
+						<li class="list-group-item italica"><%= q.body %></li>
+						<li class="list-group-item"><span class="negrita">Usuario: </span><%= q.user_name %></li>
+						<li class="list-group-item"><span class="negrita">Materia: </span><%= Subject.find(q.subject_id).name %></li>
+					</ul>
+					<div style="float:right"><%= link_to Subject.find(q.subject_id).name, Subject.find(q.subject_id), class:"btn btn-primary negrita"%></div>
+					<div style="padding-top:2em"></div>
+					<hr>
+				<% end %>
 			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
 			<div class="well">
-				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">últimas preguntas respondidas</h3>
+				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Últimas preguntas respondidas</h3>
+				<% @answers.each do |a|%>
+					<ul class="list-group" style="list-style-type:none">
+						<li class="list-group-item italica"><%= a.body %></li>
+						<li class="list-group-item"><span class="negrita">Pregunta original: </span><%= Comment.find(a.comment_id).body %></li>
+						<li class="list-group-item"><span class="negrita">Materia: </span><%= Subject.find(Comment.find(a.comment_id).subject_id).name %></li>
+					</ul>
+					<div style="float:right"><%= link_to Subject.find(Comment.find(a.comment_id).subject_id).name, Subject.find(Comment.find(a.comment_id).subject_id), class:"btn btn-primary negrita"%></div>
+					<div style="padding-top:2em"></div>
+					<hr>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="well">
+				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Preguntas sin respuesta</h3>
+				<% @not_answered_questions.each do |q|%>
+					<ul class="list-group" style="list-style-type:none">
+						<li class="list-group-item italica"><%= q.body %></li>
+						<li class="list-group-item"><span class="negrita">Usuario: </span><%= q.user_name %></li>
+						<li class="list-group-item"><span class="negrita">Materia: </span><%= Subject.find(q.subject_id).name %></li>
+					</ul>
+					<div style="float:right"><%= link_to Subject.find(q.subject_id).name, Subject.find(q.subject_id), class:"btn btn-primary negrita"%></div>
+					<div style="padding-top:2em"></div>
+					<hr>
+				<% end %>
 			</div>
 		</div>
 	</div>

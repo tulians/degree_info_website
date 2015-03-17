@@ -24,10 +24,10 @@
 				<ul class="nav navbar-nav">
 					<li><%= link_to 'Materias', subjects_path , class:"hvr-wobble-horizontal" %></li>
 					<li><%= link_to 'Calendario', calendar_index_path , class:"hvr-wobble-horizontal" %></li>
-					<li><%= link_to 'Contacto', contact_index_path , class:"hvr-wobble-horizontal" %></li>
 					<% if user_signed_in? %>
 						<li><%= link_to 'Preguntas', questions_path , class:"hvr-wobble-horizontal" %></li>
 					<% end %>
+					<li><%= link_to 'Contacto', contact_index_path , class:"hvr-wobble-horizontal" %></li>
 				</ul>
 		        <ul class="nav navbar-nav navbar-right">
 			        <% if user_signed_in? %>
