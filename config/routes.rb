@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :subjects
   resources :comments
   resources :answers
-  resources :pages
+  resources :questions
+  resources :calendar
+  resources :contact
   resources :uploads, only: [:create]
 
   post 'comments/new'
