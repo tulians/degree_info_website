@@ -12,6 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).on("ready", function(event){
+	checkbox = $("#terms");
+	checkbox.on("click", function(event){
+		button = $("#registration-submit");
+		if (checkbox.prop("checked") == false){
+			button.prop("disabled",true);
+		}
+		else{
+			button.prop("disabled",false);
+		}
+	});
+});
