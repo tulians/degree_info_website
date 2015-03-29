@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.1'
+gem 'railties'
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'sass-rails', '~> 4.0.3'
@@ -11,7 +12,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'hirb'
 gem 'turbolinks'
-gem 'jquery-turbolinks'
+# jQuery
+gem 'jquery-rails', '~> 4.0.3'
 # PostgreSQL database
 gem 'pg'
 # MS Windows support

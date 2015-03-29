@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+//= require jquery_ujs
 //= require bootstrap
 //= require_tree .
 //= require turbolinks
 
-$(document).ready(function() {
+$(document).on('ready',function() {
 	checkbox = $("#terms");
 	checkbox.on("click", function(event){
 		button = $("#registration-submit");
