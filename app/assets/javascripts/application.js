@@ -14,7 +14,8 @@
 //= require bootstrap
 //= require_tree .
 
-$(document).on("ready", function(event){
+var ready;
+ready = function() {
 	checkbox = $("#terms");
 	checkbox.on("click", function(event){
 		button = $("#registration-submit");
@@ -25,4 +26,7 @@ $(document).on("ready", function(event){
 			button.prop("disabled",false);
 		}
 	});
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
