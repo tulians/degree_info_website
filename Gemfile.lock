@@ -64,6 +64,9 @@ GEM
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.2)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -168,6 +171,7 @@ DEPENDENCIES
   devise
   hirb
   jbuilder (~> 2.0)
+  jquery-turbolinks
   mini_magick (= 3.8.0)
   mobvious
   mobvious-rails

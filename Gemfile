@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'hirb'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # PostgreSQL database
 gem 'pg'
 # MS Windows support
