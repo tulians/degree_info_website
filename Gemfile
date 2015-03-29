@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'hirb'
+gem 'turbolinks'
 # PostgreSQL database
 gem 'pg'
 # MS Windows support
@@ -24,7 +25,3 @@ gem 'mobvious-rails'
 # Dropbox uploading
 gem 'paperclip'
 gem 'paperclip-dropbox'
-# jQuery
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'turbolinks'
