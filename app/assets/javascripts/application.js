@@ -27,4 +27,5 @@ $(document).on('ready',function() {
 			button.prop("disabled",false);
 		}
 	});
+	$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 });
