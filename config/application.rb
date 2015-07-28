@@ -20,8 +20,9 @@ module DegreeInfoWebsite
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
     config.middleware.use Mobvious::Manager
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
 
-    # Configuración del Mailer. Se utiliza Gmail
+    # Configuración del Mailer. Se utiliza Outlook
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
         address:              'smtp-mail.outlook.com',

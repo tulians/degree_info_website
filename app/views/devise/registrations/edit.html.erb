@@ -22,34 +22,37 @@
                     <div>Esperando confirmación: <%= resource.unconfirmed_email %></div>
                   <% end %>
                   <div class="row">
-                    <div class="col-md-1"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-xs-12 col-md-8"><%= f.label "Contraseña nueva" %> <!-- <i>(dejar en blanco si no la vas a cambiar)</i>--> </div> 
                   </div>
                   <div class="row">
-                    <div class="col-md-1"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-xs-12 col-md-8"><%= f.password_field :password, autofocus: true, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-md-1"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-xs-12 col-md-8"><%= f.label "Confirmar contraseña" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-md-1"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-xs-12 col-md-8"><%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña actual" %> <i>(la necesitamos para poder verificar que seas vos quien hace los cambios)</i></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.label "Contraseña actual" %>  <!--<span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span>--><span class="error" style="vertical-align:top">*</span>
+                    </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-xs-12 col-md-8"><%= f.password_field :current_password, autocomplete: "off", class:"form-control", :required => "required" %></div></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-xs-12 col-md-8"><%= f.password_field :current_password, autocomplete: "off", class:"form-control", :required => "required" %></div>
                   </div>
                   <div class="row" style="padding-top:1em">
-                    <div class="col-md-1"></div>
-                    <div class="col-xs-12 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary" %></div>
+                    <div class="col-md-2"></div>
+                    <center><div class="col-xs-12 col-md-8 form-group"><%= f.submit "Actualizar", class:"btn btn-primary negrita" %></div>
                   </div>
                 <% end %>
+                <hr>
+                <!--<span class="glyphicon glyphicon-question-sign destacado" aria-hidden="true"></span>--><span class="error" style="vertical-align:top">*</span> <span style="padding-top:1em">Necesitamos que ingrese su contraseña actual por cuestiones de seguridad, para verificar y procesar la actualización de información.</span>
               <!--
                 <h3>Cancel my account</h3>
                 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>

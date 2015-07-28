@@ -5,7 +5,7 @@
 				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Últimas preguntas realizadas</h3>
 				<% if @questions.count == 0 %>
 					<ul class="list-group" style="list-style-type:none">
-						<li class="list-group-item italica"><center class="italica">No existe contenido</center></li>
+						<li class="list-group-item italica"><center class="italica"><!--<span class="glyphicon glyphicon-exclamation-sign error" aria-hidden="true"></span> -->No existe contenido</center></li>
 					</ul>
 				<% else %>
 					<% @questions.each do |q|%>
@@ -26,7 +26,7 @@
 				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Últimas preguntas respondidas</h3>
 				<% if @answers.count == 0 %>
 					<ul class="list-group" style="list-style-type:none">
-						<li class="list-group-item italica"><center class="italica">No existe contenido</center></li>
+						<li class="list-group-item italica"><center class="italica"><!--<span class="glyphicon glyphicon-exclamation-sign error" aria-hidden="true"></span> -->No existe contenido</center></li>
 					</ul>
 				<% else %>
 					<% @answers.each do |a|%>
@@ -47,7 +47,7 @@
 				<h3 class="destacado" style="padding-bottom:0.5em;text-align:center;">Preguntas sin respuesta</h3>
 				<% if @not_answered_questions.count == 0 %>
 					<ul class="list-group" style="list-style-type:none">
-						<li class="list-group-item italica"><center class="italica">No existe contenido</center></li>
+						<li class="list-group-item italica"><center class="italica"><!--<span class="glyphicon glyphicon-exclamation-sign error" aria-hidden="true"></span> -->No existe contenido</center></li>
 					</ul>
 				<% else %>
 					<% @not_answered_questions.each do |q|%>

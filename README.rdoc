@@ -38,7 +38,7 @@ necesarios para hacer que la aplicación funcione correctamente.
 		Inicializar un repositorio local (sólo se realiza una vez)
 			"git init"
 		Agregar la URL del repositorio a git (sólo se realiza una vez)
-			"git remote add origin https://github.com/cloud-9-team/bestnid.git"
+			"git remote add origin https://github.com/tulians/degree_info_website.git"
 		Descargar repositorio:
 			"git pull origin master"
 

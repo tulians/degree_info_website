@@ -213,10 +213,22 @@ html, body {
 	position: relative;
 }
 
-.img-icon {
+.ingenieria-icon {
   overflow: hidden;
   display: inline-block;
   height: 10em;
+  padding: 4px;
+  line-height: 1.42857143;
+  border-radius: 50%;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.informatica-icon {
+  overflow: hidden;
+  display: inline-block;
+  height: 9.3em;
   padding: 4px;
   line-height: 1.42857143;
   border-radius: 50%;
