@@ -28,12 +28,14 @@
                 <%= link_to 'Editar', edit_subject_path(@subject)%> |
                 <%= link_to 'Eliminar', @subject, data: { confirm: '¿Estás segur@?' }, method: :delete %> |
               <% end %>
-              <%= link_to 'Volver', subjects_path %>
             </p>
             </center>
             <hr>
             <%= render 'uploads/new' %>
             <hr>
+            <p class="destacado">
+              <%= link_to 'Volver', subjects_path %>
+            </p>
           </hr>
             <div style="padding-top:1em"></div>
           </div>
