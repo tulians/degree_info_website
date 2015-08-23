@@ -1,8 +1,9 @@
 <center>
 	<% @upload = Upload.new %>
-	<%= form_for @upload , :html => { :multipart => true} do |u| %>
-		<%= u.file_field :file, :multiple => true %>
-		<div style="padding-top: 1em"></div>
-		<input type="submit" value="Subir apuntes/notas/exámenes" class="btn btn-success negrita">
+	<%= form_for @upload , html: { :multipart => true, class: "dropzone"} do |u| %>
+		<div class="fallback">
+			<%= u.file_field :file %><br>
+    		<%= u.submit "Upload" %>
+		</div>
 	<% end %>
 </center>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :calendar
   resources :contact
   resources :terms
-  resources :uploads, only: [:create]
+  resources :uploads #, only: [:create]
 
   post 'comments/new'
   post 'answers/new'
