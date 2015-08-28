@@ -36,7 +36,7 @@
                       <tbody>
                         <% @subjects.where(year: "Primero").curr_order.each do |subject| %>
                           <tr>
-                            <td class="destacado"><%= link_to subject.name, subject, 'data-no-turbolink': true %></td> <!--
+                            <td class="destacado"><%= link_to subject.name, subject, 'data-no-turbolink' => true %></td> <!--
                             <td><%= subject.description %></td> -->
                             <td><%= subject.code %></td> <!--
                             <td><%= image_tag subject.picture_url(:thumb) if subject.picture? %></td> 
@@ -70,7 +70,7 @@
                       <tbody>
                         <% @subjects.where(year: "Segundo").curr_order.each do |subject| %>
                           <tr>
-                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink': true %></td>
+                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink' => true %></td>
                             <td><%= subject.code %></td>
                           </tr>
                         <% end %>
@@ -99,7 +99,7 @@
                       <tbody>
                         <% @subjects.where(year: "Tercero").curr_order.each do |subject| %>
                           <tr>
-                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink': true %></td>
+                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink' => true %></td>
                             <td><%= subject.code %></td>
                           </tr>
                         <% end %>
@@ -128,7 +128,7 @@
                       <tbody>
                         <% @subjects.where(year: "Cuarto").curr_order.each do |subject| %>
                           <tr>
-                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink': true %></td>
+                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink' => true %></td>
                             <td><%= subject.code %></td>
                           </tr>
                         <% end %>
@@ -157,7 +157,7 @@
                       <tbody>
                         <% @subjects.where(year: "Quinto").curr_order.each do |subject| %>
                           <tr>
-                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink': true %></td>
+                            <td class="destacado"><%= link_to subject.name, subject,'data-no-turbolink' => true %></td>
                             <td><%= subject.code %></td>
                           </tr>
                         <% end %>
