@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317012214) do
+ActiveRecord::Schema.define(version: 20150729004937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,25 @@ ActiveRecord::Schema.define(version: 20150317012214) do
 
   add_index "comments", ["subject_id"], name: "index_comments_on_subject_id", using: :btree
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",         default: 0, null: false
+    t.integer  "attempts",         default: 0, null: false
+    t.text     "handler",                      null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "progress_stage"
+    t.integer  "progress_current", default: 0
+    t.integer  "progress_max",     default: 0
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
   create_table "subjects", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description"
@@ -52,8 +71,8 @@ ActiveRecord::Schema.define(version: 20150317012214) do
   create_table "uploads", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "file_file_name",    limit: 255
-    t.string   "file_content_type", limit: 255
+    t.string   "file_file_name"
+    t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "user_id"
@@ -76,10 +95,10 @@ ActiveRecord::Schema.define(version: 20150317012214) do
     t.datetime "updated_at"
     t.string   "name",                   limit: 255
     t.string   "surname",                limit: 255
-    t.string   "confirmation_token",     limit: 255
+    t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email",      limit: 255
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

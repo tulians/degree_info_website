@@ -28,5 +28,5 @@ gem 'mobvious-rails'
 # Dropbox uploading
 gem 'paperclip'
 gem 'paperclip-dropbox'
-
+# Bootstrap gem for dropzone
 gem 'bootstrap-sass', '~> 3.1.1'
