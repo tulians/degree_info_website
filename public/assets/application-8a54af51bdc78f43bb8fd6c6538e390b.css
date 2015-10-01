@@ -171,7 +171,7 @@
   -o-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  background-image: url("/assets/spritemap.png");
+  background-image: url("/assets/dropzone_image.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   position: absolute;
@@ -184,7 +184,7 @@
 }
 @media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
   .dropzone .dz-default.dz-message {
-    background-image: url("/assets/spritemap@2x.png");
+    background-image: url("/assets/dropzone_image.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
@@ -253,7 +253,7 @@
   -o-transition: opacity 0.4s ease-in-out;
   -ms-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
-  background-image: url("/assets/spritemap.png");
+  background-image: url("/assets/dropzone_image.png");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
@@ -261,7 +261,7 @@
   .dropzone-previews .dz-preview .dz-error-mark,
   .dropzone .dz-preview .dz-success-mark,
   .dropzone-previews .dz-preview .dz-success-mark {
-    background-image: url("/assets/spritemap@2x.png");
+    background-image: url("/assets/dropzone_image.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
@@ -300,14 +300,14 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background-image: url("/assets/spritemap.png");
+  background-image: url("/assets/dropzone_image.png");
   background-repeat: repeat-x;
   background-position: 0px -400px;
 }
 @media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
   .dropzone .dz-preview .dz-progress .dz-upload,
   .dropzone-previews .dz-preview .dz-progress .dz-upload {
-    background-image: url("../images/spritemap@2x.png");
+    background-image: url("../images/dropzone_image.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
@@ -7165,7 +7165,7 @@ html, body {
 	border:0;
 	border-top:3px solid #00FDFE;
 	width:15%;
-	margin:0.5em auto;	
+	margin:0.5em auto;
 }
 
 .text-ellipsis{ /* Cuando hay overflow, en vez de saltar de línea, se trunca el texto y se agregan ... */
@@ -12096,8 +12096,8 @@ html, body {
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
-       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
